@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <link rel='stylesheet' id='home-css'  href='static/css/home.css' type='text/css' media='all'> 
+                <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+                <title>Amir Ajorloo</title>
+
+                <script type='text/javascript' src="static/jQuery/jquery-1.10.2.js"></script>
+                <script type='text/javascript' src="static/jQuery/jquery.hoverIntent.js"></script> 
+		<script type="text/javascript" >
+                        var jq = $.noConflict();
+			jq(document).ready(imReady);
+			var SwitchDelay=800;
+			var curPage='homeP';
+			var verLst=['sPageT','homeP','sPageB'];
+			var horLst=['sPageL','homeP','sPageR'];
+			function verDown()
+			{
+				for(var i=0;i<3;i++)
+				{
+					jq('#'+verLst[i]).animate({top:'+=10%'},300);
+//					console.log(verLst[i]+'   '+jq('#'+verLst[i]).css('top'));
+				}
+			}
+			function verUp()
+                        {
+                                for(var i=0;i<3;i++)
+                                {
+                                        jq('#'+verLst[i]).animate({top:'-=10%'},300);
+//                                        console.log(verLst[i]+'   '+jq('#'+verLst[i]).css('top'));
+                                }
+
+                        }
+                        function horLeft()
+                        {
+                                for(var i=0;i<3;i++)
+                                        jq('#'+horLst[i]).animate({left:'+=5%'},300);
+                        }
+                        function horRight()
+                        {
+                                for(var i=0;i<3;i++)
+                                        jq('#'+horLst[i]).animate({left:'-=5%'},300);
+                        }
+			function beTop(offset)
+			{
+				jq('#sPageT').animate({top:('+='+offset.toString()+'%')},SwitchDelay);
+				jq('#sPageB').animate({top:('+='+offset.toString()+'%')},SwitchDelay);
+				jq('#homeP').animate({top:('+='+offset.toString()+'%')},SwitchDelay);
+			}
+                        function beBottom(offset)
+                        {
+                                jq('#sPageT').animate({top:('-='+offset.toString()+'%')},SwitchDelay);
+                                jq('#sPageB').animate({top:('-='+offset.toString()+'%')},SwitchDelay);
+				jq('#homeP').animate({top:('-='+offset.toString()+'%')},SwitchDelay);
+                        }
+                        function beRight(offset)
+                        {
+                                jq('#sPageL').animate({left:('-='+offset.toString()+'%')},SwitchDelay);
+                                jq('#sPageR').animate({left:('-='+offset.toString()+'%')},SwitchDelay);
+				jq('#homeP').animate({left:('-='+offset.toString()+'%')},SwitchDelay);
+                        }
+                        function beLeft(offset)
+                        {
+                                jq('#sPageL').animate({left:('+='+offset.toString()+'%')},SwitchDelay);
+                                jq('#sPageR').animate({left:('+='+offset.toString()+'%')},SwitchDelay);
+				jq('#homeP').animate({left:('+='+offset.toString()+'%')},SwitchDelay);
+                        }
+
+			function imReady()
+			{
+				jq('#navBottom').hoverIntent(verUp,verDown);
+                                jq('#navTop').hoverIntent(verDown,verUp);
+                                jq('#navLeft').hoverIntent(horLeft,horRight);
+                                jq('#navRight').hoverIntent(horRight,horLeft);
+
+				jq('#navTop').click(function() { beTop(100);  } );
+				jq('#navBottom').click(function() { beBottom(100);  } );
+				jq('#navLeft').click(function() { beLeft(100);  } );
+				jq('#navRight').click(function() { beRight(100);  } );
+
+			}
+		</script>
+
+        </head>
+        <body id="bd">
+		<div id="homeP" class="sidePages"></div>
+		<div id="sPageT" class="sidePages"></div>
+                <div id="sPageB" class="sidePages"></div>
+                <div id="sPageL" class="sidePages"></div>
+                <div id="sPageR" class="sidePages"></div>
+		<div id="navBottom" class="nav"></div>
+		<div id="navTop" class="nav"></div>
+		<div id="navLeft" class="nav"></div>
+		<div id="navRight" class="nav"></div>
+        </body>
+</html>
+
+

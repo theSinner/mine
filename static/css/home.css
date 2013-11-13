@@ -1,0 +1,137 @@
+
+.bigPlate
+{
+	position:absolute;
+	left:0%;
+	top:0%;
+	width:100%;
+	height:100%;
+}
+body
+{
+	background-color:#000000;
+	margin:0px;
+	padding:0px;
+	position:fixed;
+	width:100%;
+	height:100%;
+	left:0%;
+	top:0%;
+}
+.nav
+{
+	z-index:100;
+	cursor:pointer;
+	opacity:1;
+	position:absolute;
+}
+#navBottom
+{
+	height: 10%;
+	width: 96%;
+	left:2%;
+	bottom:0%;
+}
+#navTop
+{
+        height: 10%;
+        width: 96%;
+        left:2%;
+        top:0%;
+}
+#navLeft
+{
+        height: 92%;
+        width: 5%;
+        left:0%;
+        top:4%;
+}
+#navRight
+{
+        height: 92%;
+        width: 5%;
+       	right: 0%;
+        top:4%;
+}
+.sidePages
+{
+	position:absolute;
+	width:100%;
+	height:100%;
+}
+#homeP
+{
+        background-color:#282828;
+	left:0%;
+	top:0%;
+}
+#sPageT
+{
+	background-color:#bd0026;
+	top:-100%;
+	left:0%;
+}
+#sPageB
+{
+        background-color:#229399;
+        top:100%;
+        left:0%;
+}
+
+#sPageL
+{
+        background-color:#495c65;
+        top:0%;
+        left:-100%;
+}
+#sPageR
+{
+        background-color:#447733;
+        top:0%;
+        left:100%;
+}
+.line
+{
+	position:absolute;
+	width:100%;
+	height:1%;
+	left:0%
+	background: #000000;
+	background: -moz-linear-gradient(left, #000000 0%, #b7b7b7 20%, #efefef 40%, #efefef 60%, #b7b7b7 80%, #000000 100%);
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#000000), color-stop(20%,#b7b7b7), 
+		color-stop(40%,#efefef), color-stop(60%,#efefef), color-stop(80%,#b7b7b7), color-stop(100%,#000000));
+	background: -webkit-linear-gradient(left, #000000 0%,#b7b7b7 20%,#efefef 40%,#efefef 60%,#b7b7b7 80%,#000000 100%);
+	background: -o-linear-gradient(left, #000000 0%,#b7b7b7 20%,#efefef 40%,#efefef 60%,#b7b7b7 80%,#000000 100%);
+	background: -ms-linear-gradient(left, #000000 0%,#b7b7b7 20%,#efefef 40%,#efefef 60%,#b7b7b7 80%,#000000 100%);
+	background: linear-gradient(to right, #000000 0%,#b7b7b7 20%,#efefef 40%,#efefef 60%,#b7b7b7 80%,#000000 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000',GradientType=1 );
+}
+#navTopP
+{
+	position:absolute;
+	height:100%;
+	width:40%;
+	bottom:5%;
+}
+#navBottomP
+{
+        position:absolute;
+        height:100%;
+        width:40%;
+        bottom:5%;
+}
+#navLeftP
+{
+        position:absolute;
+        height:100%;
+        width:40%;
+        bottom:5%;
+}
+#navRightP
+{
+        position:absolute;
+        height:100%;
+        width:40%;
+        bottom:5%;
+}
+
