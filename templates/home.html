@@ -11,9 +11,42 @@
                         var jq = $.noConflict();
 			jq(document).ready(imReady);
 			var SwitchDelay=800;
-			var curPage='homeP';
+			var horCP=1,verCP=1;
 			var verLst=['sPageT','homeP','sPageB'];
 			var horLst=['sPageL','homeP','sPageR'];
+			var verNms=['درباره من','خانه','تماس با من'];
+			var horNms=['پروژه ها','خانه','فعالیت ها'];
+			function showNav()
+			{
+				if(horCP>0 && verCP==1)
+				{
+					document.getElementById('navLeftT').innerHTML=' <img id="navLeftP" src="static/images/right.png"></img><br/><br/> ' + horNms[horCP-1];
+					jq('#navLeft').fadeIn(300);
+				}
+                                if(horCP<2 && verCP==1)
+				{
+                                        document.getElementById('navRightT').innerHTML=' <img id="navRightP" src="static/images/left.png"></img><br/><br/> ' + horNms[horCP+1];
+                                        jq('#navRight').fadeIn(300);
+                                }
+                                if(verCP>0 && horCP==1)
+				{
+                                        document.getElementById('navTopT').innerHTML=verNms[verCP-1];
+                                 	jq('#navTop').fadeIn(300);       
+                                }
+
+                                if(verCP<2 && horCP==1)
+				{
+                                        document.getElementById('navBottomT').innerHTML=verNms[verCP+1];
+                                        jq('#navBottom').fadeIn(300);
+                                }
+			}
+			function hideNav()
+			{
+				jq('#navBottom').fadeOut(300);
+                                jq('#navTop').fadeOut(300);
+                                jq('#navLeft').fadeOut(300);
+                                jq('#navRight').fadeOut(300);
+			}
 			function verDown()
 			{
 				for(var i=0;i<3;i++)
@@ -21,6 +54,10 @@
 					jq('#'+verLst[i]).animate({top:'+=10%'},300);
 //					console.log(verLst[i]+'   '+jq('#'+verLst[i]).css('top'));
 				}
+                                if(jq(this).attr('id')=='navBottom')
+                                        jq('#navBottomP').fadeOut(300);
+				else
+					jq('#navTopP').fadeIn(300);
 			}
 			function verUp()
                         {
@@ -29,41 +66,62 @@
                                         jq('#'+verLst[i]).animate({top:'-=10%'},300);
 //                                        console.log(verLst[i]+'   '+jq('#'+verLst[i]).css('top'));
                                 }
+				if(jq(this).attr('id')=='navBottom')
+					jq('#navBottomP').fadeIn(300);
+                                else
+                                        jq('#navTopP').fadeOut(300);
 
                         }
                         function horLeft()
                         {
                                 for(var i=0;i<3;i++)
                                         jq('#'+horLst[i]).animate({left:'+=5%'},300);
+                                if(jq(this).attr('id')=='navLeft')
+                                        jq('#navLeftP').fadeIn(300);
+                                else
+                                        jq('#navRightP').fadeOut(300);
+
                         }
                         function horRight()
                         {
                                 for(var i=0;i<3;i++)
                                         jq('#'+horLst[i]).animate({left:'-=5%'},300);
+                                if(jq(this).attr('id')=='navLeft')
+                                        jq('#navLeftP').fadeOut(300);
+                                else
+                                        jq('#navRightP').fadeIn(300);
                         }
 			function beTop(offset)
 			{
+				hideNav();
+				verCP-=1;
 				jq('#sPageT').animate({top:('+='+offset.toString()+'%')},SwitchDelay);
 				jq('#sPageB').animate({top:('+='+offset.toString()+'%')},SwitchDelay);
-				jq('#homeP').animate({top:('+='+offset.toString()+'%')},SwitchDelay);
+				jq('#homeP').animate({top:('+='+offset.toString()+'%')},SwitchDelay,showNav);
 			}
                         function beBottom(offset)
                         {
+				hideNav();
+				verCP+=1;
                                 jq('#sPageT').animate({top:('-='+offset.toString()+'%')},SwitchDelay);
                                 jq('#sPageB').animate({top:('-='+offset.toString()+'%')},SwitchDelay);
-				jq('#homeP').animate({top:('-='+offset.toString()+'%')},SwitchDelay);
+				jq('#homeP').animate({top:('-='+offset.toString()+'%')},SwitchDelay,showNav);
                         }
                         function beRight(offset)
                         {
+				hideNav();
+				horCP+=1;
                                 jq('#sPageL').animate({left:('-='+offset.toString()+'%')},SwitchDelay);
                                 jq('#sPageR').animate({left:('-='+offset.toString()+'%')},SwitchDelay);
-				jq('#homeP').animate({left:('-='+offset.toString()+'%')},SwitchDelay);
+				jq('#homeP').animate({left:('-='+offset.toString()+'%')},SwitchDelay,showNav);
                         }
                         function beLeft(offset)
                         {
+				hideNav();
+				horCP-=1;
                                 jq('#sPageL').animate({left:('+='+offset.toString()+'%')},SwitchDelay);
                                 jq('#sPageR').animate({left:('+='+offset.toString()+'%')},SwitchDelay);
-				jq('#homeP').animate({left:('+='+offset.toString()+'%')},SwitchDelay);
+				jq('#homeP').animate({left:('+='+offset.toString()+'%')},SwitchDelay,showNav);
                         }
 
 			function imReady()
@@ -77,7 +135,7 @@
 				jq('#navBottom').click(function() { beBottom(100);  } );
 				jq('#navLeft').click(function() { beLeft(100);  } );
 				jq('#navRight').click(function() { beRight(100);  } );
-
+				showNav();
 			}
 		</script>
 
@@ -88,10 +146,20 @@
                 <div id="sPageB" class="sidePages"></div>
                 <div id="sPageL" class="sidePages"></div>
                 <div id="sPageR" class="sidePages"></div>
-		<div id="navBottom" class="nav"></div>
-		<div id="navTop" class="nav"></div>
-		<div id="navLeft" class="nav"></div>
-		<div id="navRight" class="nav"></div>
+		<div id="navBottom" class="nav">
+                        <p align="center" style="position:absolute;width:97%;height:30%;top:-15%"><img id="navBottomP" src="static/images/up.png"></img></p>
+                        <p id="navBottomT" class="navText" align="center"></p>
+		</div>
+		<div id="navTop" class="nav">
+                        <p id="navTopT" class="navText" align="center"></p>
+                        <p align="center" style="position:absolute;width:97%;height:30%;bottom:-15%"><img id="navTopP" src="static/images/down.png"></img></p>
+		</div>
+		<div id="navLeft" class="nav">
+                        <p id="navLeftT" class="navText" align="center"> <img id="navLeftP" src="static/images/right.png"></img><br/><br/></p>
+		</div>
+		<div id="navRight" class="nav">
+			<p id="navRightT" class="navText" align="center"> <img id="navRightP" src="static/images/left.png"></img><br/><br/></p>
+		</div>
         </body>
 </html>
 
