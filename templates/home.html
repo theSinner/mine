@@ -2,7 +2,8 @@
 <html>
         <head>
                 <link rel='stylesheet' id='home-css'  href='static/css/home.css' type='text/css' media='all'> 
-                <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+                <meta http-equiv="content-type" con
+                tent="text/html; charset=utf-8" />
                 <title>Amir Ajorloo</title>
 
                 <script type='text/javascript' src="static/jQuery/jquery-1.10.2.js"></script>
@@ -137,27 +138,51 @@
 				jq('#navRight').click(function() { beRight(100);  } );
 				showNav();
 			}
+			function reseting()
+			{
+				scX=jq(window).width();
+				scY=jq(window).height();
+			}
 		</script>
 
         </head>
-        <body id="bd">
+        <body id="bd" onresize="reseting()">
 		<div id="homeP" class="sidePages">
-                        <div id="profilePicture"><img id="ppic" src="static/images/homeMine.jpg"></img></div>
-                        <div id="homeTextPlate">
-                                <p id="homeText" align="center">      
+                        <div id="profilePicture" class="shdw"><img id="ppic" src="static/images/homeMine.jpg"></img></div>
+                        <div id="homeTextPlate" class="shdw">
+                                <p id="homeText" align="center">
+                                		<br/>      
                                         <span>وبسایت شخصی</span><br/><br/>
                                         <span>امیر آجورلو</span>
                                 </p>    
 			</div>
 		</div>
 		<div id="sPageT" class="sidePages">
-                        <div style="position:absolute;left:10%;width:80%;height:80%;top:5%;background-color:#000000;"></div>
+                        <div id="aboutPlate" class="shdw" style="position:absolute;left:10%;width:80%;height:80%;top:5%;background-color:#000000;"></div>
 		</div>
                 <div id="sPageB" class="sidePages">
+                        <div class="shdw" style="position:absolute;left:10%;width:25%;height:80%;top:10%;background-color:#000000;"></div>
+                        <div class="shdw" style="position:absolute;left:37%;width:53%;height:30%;top:10%;background-color:#000000;"></div>
+                        <div class="shdw" style="position:absolute;left:37%;width:53%;height:48%;top:42%;background-color:#000000;"></div>
 		</div>
                 <div id="sPageL" class="sidePages">
+                        <div class="shdw" style="position:absolute;left:10%;width:14%;height:30%;top:18%;background-color:#000000;"></div>
+                        <div class="shdw" style="position:absolute;left:26%;width:14%;height:30%;top:18%;background-color:#000000;"></div>
+                        <div class="shdw" style="position:absolute;left:42%;width:14%;height:30%;top:18%;background-color:#000000;"></div>
+                        <div class="shdw" style="position:absolute;left:58%;width:14%;height:30%;top:18%;background-color:#000000;"></div>
+                        <div class="shdw" style="position:absolute;left:74%;width:14%;height:30%;top:18%;background-color:#000000;"></div>
+                        <div class="shdw" style="position:absolute;left:10%;width:14%;height:30%;top:52%;background-color:#000000;"></div>
+                        <div class="shdw" style="position:absolute;left:26%;width:14%;height:30%;top:52%;background-color:#000000;"></div>
+                        <div class="shdw" style="position:absolute;left:42%;width:14%;height:30%;top:52%;background-color:#000000;"></div>
+                        <div class="shdw" style="position:absolute;left:58%;width:14%;height:30%;top:52%;background-color:#000000;"></div>
+                        <div class="shdw" style="position:absolute;left:74%;width:14%;height:30%;top:52%;background-color:#000000;"></div>
 		</div>
                 <div id="sPageR" class="sidePages">
+                        <div class="shdw" style="position:absolute;left:10%;width:25%;height:30%;top:10%;background-color:#000000;"></div>
+                        <div class="shdw" style="position:absolute;left:10%;width:25%;height:46%;top:44%;background-color:#000000;"></div>
+                        <div class="shdw" style="position:absolute;left:37%;width:53%;height:45%;top:10%;background-color:#000000;"></div>
+                        <div class="shdw" style="position:absolute;left:37%;width:53%;height:31%;top:59%;background-color:#000000;"></div>
+
 		</div>
                 <div id="navBottom" class="nav">
                         <p align="center" style="position:absolute;width:97%;height:30%;top:-15%"><img id="navBottomP" src="static/images/up.png"></img></p>
