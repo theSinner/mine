@@ -245,4 +245,25 @@ body
 }
 #aboutPlate
 {
+	overflow:hidden;
+}
+#aboutBG
+{
+	position:absolute;
+	width:100%;
+	top:0%;
+	left:0%;
+}
+#aboutText
+{
+	position:absolute;
+	right:1%;
+	top:2%;
+	width:98%;
+	height:96%;
+	font-family:dastnevis,Arial;
+	font-size:25px;
+	line-height:45px;
+	color:#ffffff;
+	opacity:0.3;
 }

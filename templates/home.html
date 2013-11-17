@@ -8,6 +8,7 @@
 
                 <script type='text/javascript' src="static/jQuery/jquery-1.10.2.js"></script>
                 <script type='text/javascript' src="static/jQuery/jquery.hoverIntent.js"></script> 
+
 		<script type="text/javascript" >
                         var jq = $.noConflict();
 			jq(document).ready(imReady);
@@ -124,6 +125,16 @@
                                 jq('#sPageR').animate({left:('+='+offset.toString()+'%')},SwitchDelay);
 				jq('#homeP').animate({left:('+='+offset.toString()+'%')},SwitchDelay,showNav);
                         }
+			function showAboutText()
+			{	
+				jq('#aboutBG').animate({opacity:'0.3'},300);
+				jq('#aboutText').animate({opacity:'1'},300);
+			}
+                        function showAboutPic()
+                        {       
+                                jq('#aboutBG').animate({opacity:'1'},300);
+                                jq('#aboutText').animate({opacity:'0.3'},300);
+                        }
 
 			function imReady()
 			{
@@ -137,6 +148,7 @@
 				jq('#navLeft').click(function() { beLeft(100);  } );
 				jq('#navRight').click(function() { beRight(100);  } );
 				showNav();
+				jq('#aboutText').hoverIntent(showAboutText,showAboutPic);
 			}
 			function reseting()
 			{
@@ -158,7 +170,12 @@
 			</div>
 		</div>
 		<div id="sPageT" class="sidePages">
-                        <div id="aboutPlate" class="shdw" style="position:absolute;left:10%;width:80%;height:80%;top:5%;background-color:#000000;"></div>
+                        <div id="aboutPlate" class="shdw" style="position:absolute;left:10%;width:80%;height:80%;top:5%;background-color:#000000;">
+				<img id='aboutBG' src='static/images/about.jpg'></img>
+				<p id="aboutText" align="RIGHT" dir="RTL">
+در کناری از خانه ما.اتاقیست سرد و آبی.تخت و گیتار کهنه ی من ؛عکس یک زن به دیواری .زنی زیباروی و خندان.یار من بود او دورانی.کنون من ماندم و منگیتاری و و سیگار و تنهایی ...عشق من رفت به تن خاک ،طعم شب نیست جز بیداری...هی عکس خندان بشنو از من !!خواهمت دید روزگاری.دیگرم نیست نای ماندن.پایان آواز، آغاز رفتن.چاقویی پنهان ته گنجه.دستای سردم، رگ های سبزم.در کناری از خانه ما.اتاقیست سرد و آبی.تخت و گیتار کهنه ی من ؛عکس یک زن به دیواری .زنی زیباروی و خندان.یار من بود او دورانی.کنون من ماندم و منگیتاری و و سیگار و تنهایی ...عشق من رفت به تن خاک ،طعم شب نیست جز بیداری...هی عکس خندان بشنو از من !!خواهمت دید روزگاری.دیگرم نیست نای ماندن.پایان آواز، آغاز رفتن.چاقویی پنهان ته گنجه.دستای سردم، رگ های سبزم.در کناری از خانه ما.اتاقیست سرد و آبی.تخت و گیتار کهنه ی من ؛عکس یک زن به دیواری .زنی زیباروی و خندان.یار من بود او دورانی.کنون من ماندم و منگیتاری و و سیگار و تنهایی ...عشق من رفت به تن خاک ،طعم شب نیست جز بیداری...هی عکس خندان بشنو از من !!خواهمت دید روزگاری.دیگرم نیست نای ماندن.پایان آواز، آغاز رفتن.چاقویی پنهان ته گنجه.دستای سردم، رگ های سبزم.در کناری از خانه ما.اتاقیست سرد و آبی.تخت و گیتار کهنه ی من ؛عکس یک زن به دیواری .زنی زیباروی و خندان.یار من بود او دورانی.کنون من ماندم و منگیتاری و و سیگار و تنهایی ...عشق من رفت به تن خاک ،طعم شب نیست جز بیداری...هی عکس خندان بشنو از من !!خواهمت دید روزگاری.دیگرم نیست نای ماندن.پایان آواز، آغاز رفتن.چاقویی پنهان ته گنجه.دستای سردم، رگ های سبزم.
+				</p>
+			</div>
 		</div>
                 <div id="sPageB" class="sidePages">
                         <div class="shdw" style="position:absolute;left:10%;width:25%;height:80%;top:10%;background-color:#000000;"></div>
