@@ -79,7 +79,7 @@ body
         background-color:#161616;
 	left:0%;
 	top:0%;
-	background-image:url('../images/pattern/1.png');
+	background-image:url('../images/pattern/2.png');
 	background-repeat:repeat-xy;	
 }
 #sPageT
@@ -95,7 +95,7 @@ body
         background-color:#229399;
         top:100%;
         left:0%;
-        background-image:url('../images/pattern/1.png');
+        background-image:url('../images/pattern/2.png');
         background-repeat:repeat-xy;
 }
 
@@ -104,7 +104,7 @@ body
         background-color:#495c65;
         top:0%;
         left:-100%;
-        background-image:url('../images/pattern/4.png');
+        background-image:url('../images/pattern/2.png');
         background-repeat:repeat-xy;
 }
 #sPageR
@@ -112,7 +112,7 @@ body
         background-color:#447733;
         top:0%;
         left:100%;
-        background-image:url('../images/pattern/4.gif');
+        background-image:url('../images/pattern/2.png');
         background-repeat:repeat-xy;
 }
 .line
@@ -204,8 +204,9 @@ body
 	width:48%;
 	height:70%;
 	left:37%;
-	top:15%;
+	top:20%;
 	background-color:#000000;
+	opacity:0;
 
 }
 #profilePicture
@@ -214,8 +215,9 @@ body
 	width:20%;
 	height:70%;
 	left:15%;
-	top:15%;
+	top:20%;
 	background-color:#000000;
+	opacity:0;
 }
 #homeText
 {
@@ -245,7 +247,9 @@ body
 }
 #aboutPlate
 {
-	overflow:hidden;
+	overflow:auto;
+	margin:0px;
+	padding:0px;
 }
 #aboutBG
 {
@@ -253,6 +257,7 @@ body
 	width:100%;
 	top:0%;
 	left:0%;
+
 }
 #aboutText
 {
@@ -266,4 +271,12 @@ body
 	line-height:45px;
 	color:#ffffff;
 	opacity:0.3;
+        margin:0px;
+        padding:0px;
+
+}
+.box
+{
+	position:absolute;
+	background-color:#000000;
 }
